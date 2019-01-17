@@ -97,11 +97,12 @@ module.exports = {
         ],
         proxy: {
             '/api': {
-                // target: 'http://localhost/1-11-user-admin/server',
-                target: 'http://localhost/server',
-                // target: 'http://api01.idataapi.cn:8000/news/qihoo',
+                target: 'http://haoyu9558.site/server/news',
+                changeOrigin: true,
+                // target: 'http://localhost/server/php_correlation/news',
                 pathRewrite: { '^/api': '' }
             }
+
         }
     },
 }
