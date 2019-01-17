@@ -1,0 +1,19 @@
+$color = green;
+
+body {
+    background-color: pink;
+
+    div {
+        background-color: red;
+
+        span {
+            text-align: center;
+        }
+
+        &:after {
+            display: block;
+            content: 'hello';
+            overflow: hidden;
+        }
+    }
+}
