@@ -1,0 +1,50 @@
+.navbar-default {
+    height: 72px;
+    width: 100%;
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    z-index: 20;
+
+    &:after {
+        content: '';
+        display: block;
+        clear: both;
+    }
+}
+
+#logo {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.navbar-left {
+    position: absolute;
+    right: 390px;
+    top: 40%;
+    transform: translateY(-50%);
+}
+
+#navlist {
+    position: absolute;
+    left: 580px;
+    top: 50%;
+    transform: translateY(-50%);
+    line-height: 72px;
+
+    >li {
+        width: 100px;
+        padding: 0 13px;
+        text-align: center;
+        font-size: 18px;
+        color: #2932E1;
+
+        &:hover {
+            cursor: pointer;
+            color: #CC0000;
+            background: #fff;
+            border-bottom: 2px solid #cc0000;
+        }
+    }
+}

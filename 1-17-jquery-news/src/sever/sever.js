@@ -12,4 +12,9 @@ function ajax({ type = 'get', url = '', data = {}, dataType = 'json' }) {
     })
 }
 
-export const newsTitle = (url) => ajax({ url });
+export const newsTitle = () => ajax({
+    url: "api/news_classify.php"
+});
+export const newsList = () => ajax({
+    url: "/api/news_list.php"
+});

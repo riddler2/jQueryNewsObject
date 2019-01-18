@@ -9,16 +9,38 @@
 </head>
 
 <body>
-    <div class="container">
+    <div class="wrapper">
+        <%= require('html-loader!./header.html')  %>
 
-        123
+            <div class="body">
+                <div class="body-swiper">
+                    <ul id="banner-img">
+                        <div id="error">图片请求失败</div>
+                    </ul>
+                    <ol>
+                        <li class="on"></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ol>
+                    <div class="nav left"></div>
+                    <div class="nav right"></div>
 
+                </div>
 
+                <div class="body-news-list"></div>
+            </div>
+            <div class="newslist">
+                <div class="side-bar">
+                    <h3> 最新新闻</h3>
+                    <div class="side">
+                        <ul id="side-news">
 
+                        </ul>
+                    </div>
+                </div>
+            </div>
     </div>
-
-
-
     <script>
     </script>
 </body>

@@ -19,39 +19,69 @@ module.exports = {
     },
     module: {
         rules: [{
-            test: /\.css$/,
-            use: [{
-                    loader: 'style-loader'
-                },
-                {
-                    loader: 'css-loader'
-                }
-            ]
-        }, {
-            test: /\.stylus$/,
-            use: extractPlugin.extract({
-                fallback: {
-                    loader: 'style-loader'
-                },
+                test: /\.css$/,
                 use: [{
-                    loader: 'css-loader'
-                }, {
-                    loader: 'stylus-loader'
+                        loader: 'style-loader'
+                    },
+                    {
+                        loader: 'css-loader'
+                    }
+                ]
+            }, {
+                test: /\.stylus$/,
+                use: extractPlugin.extract({
+                    fallback: {
+                        loader: 'style-loader'
+                    },
+                    use: [{
+                        loader: 'css-loader'
+                    }, {
+                        loader: 'stylus-loader'
+                    }]
+                })
+            }, {
+                test: /\.scss$/,
+                use: [{
+                        loader: 'style-loader'
+                    },
+                    {
+                        loader: 'css-loader'
+                    },
+                    {
+                        loader: 'sass-loader'
+                    }
+                ]
+            }, {
+                test: /\.(png|jpg|jpeg|gif)$/,
+                use: [{
+                    loader: 'url-loader',
+                    options: {
+                        limit: 10000,
+                        publicPath: '../img/',
+                        outputPath: 'img/',
+                    }
                 }]
-            })
-        }, {
-            test: /\.scss$/,
-            use: [{
-                    loader: 'style-loader'
-                },
-                {
-                    loader: 'css-loader'
-                },
-                {
-                    loader: 'sass-loader'
+            },
+            {
+                test: /\.(woff2?|woff|eot|svg|ttf|otf)(\?.*)?$/,
+                loader: 'url-loader',
+                options: {
+                    limit: 10000
                 }
-            ]
-        }]
+            },
+            // {
+            //     test: /\.html$/,
+            //     loader: "html-loader"
+            // },
+            // {
+            //     loader: 'html-loader',
+            //     options: {
+            //         ignoreCustomFragments: [/\{\{.*?}}/],
+            //         root: path.resolve(__dirname, 'img'),
+            //         attrs: ['img:src', 'img:data-src']
+            //     }
+            // },
+        ]
     },
     resolve: {
         extensions: ['.js', ".css"],
@@ -99,10 +129,8 @@ module.exports = {
             '/api': {
                 target: 'http://haoyu9558.site/server/news',
                 changeOrigin: true,
-                // target: 'http://localhost/server/php_correlation/news',
                 pathRewrite: { '^/api': '' }
             }
-
         }
     },
 }

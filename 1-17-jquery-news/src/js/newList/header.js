@@ -1,8 +1,26 @@
 import { newsTitle } from "../../sever/sever";
+import '../../css/header.stylus'
 
 
-async function fn() {
-    let res = await newsTitle("api/news_classify.php")
-    console.log(res.data);
+const init = () => {
+    initEvent();
+    renderList();
+
 }
-fn()
+const initEvent = () => {
+
+
+}
+const renderList = async() => {
+    let res = await newsTitle();
+    let arr = [];
+    res.data.forEach(item => {
+        arr.push(`<li>${item}</li>`)
+    });
+
+    $("#navlist").html(arr.join(""))
+
+
+}
+
+init();
