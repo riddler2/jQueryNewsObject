@@ -7,6 +7,7 @@ const init = () => {
     renderList();
 
 }
+
 const initEvent = () => {
 
 
@@ -19,6 +20,7 @@ const renderList = async() => {
     });
 
     $("#navlist").html(arr.join(""))
+    $("#navlist>li:first").addClass("on")
 
 
 }

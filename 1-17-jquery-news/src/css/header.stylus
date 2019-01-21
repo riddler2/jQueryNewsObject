@@ -13,6 +13,13 @@
     }
 }
 
+.on {
+    cursor: pointer;
+    color: #c00 !important;
+    background: #fff;
+    border-bottom: 2px solid #cc0000;
+}
+
 #logo {
     position: absolute;
     top: 50%;
@@ -39,12 +46,13 @@
         text-align: center;
         font-size: 18px;
         color: #2932E1;
-
-        &:hover {
-            cursor: pointer;
-            color: #CC0000;
-            background: #fff;
-            border-bottom: 2px solid #cc0000;
-        }
+        cursor: pointer;
     }
+}
+
+.btn-default {
+    color: #fff !important;
+    background-color: #3385FF !important;
+    border-color: #ccc !important;
+    outline: none;
 }
