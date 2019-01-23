@@ -125,6 +125,6 @@ content.forEach(function(ele, index) {
 function run() {
     timer1 = setInterval(function() {
         rightBtn.click();
-    }, 2000);
+    }, 3000);
 }
 run();

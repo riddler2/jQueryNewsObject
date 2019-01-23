@@ -93,7 +93,7 @@ const randerBannerImg = (res) => {
     let dataArr = [];
     let arr1 = [];
     let arr2 = [];
-    console.log(res);
+
 
     $.each(res.data, function(index, item) {
         if (item.imageUrls && dataArr.length < 4) {
@@ -112,6 +112,8 @@ const randerBannerImg = (res) => {
 
 const randerDetNews = (res) => {
     let arr = [];
+    console.log(res.data);
+
     $.each(res.data, function(index, item) {
         arr.push(
             `<li>
@@ -120,7 +122,8 @@ const randerDetNews = (res) => {
             <h3>${item.title}</h3>
             <span>${item.posterScreenName}</span>
             <span>${item.publishDateStr}</span>
-            <p>undefinde</p>
+            <p>${item.content}</p>
+            <span class="read-more">查看详情>></span>
             </div>
             </li>`);
     })
